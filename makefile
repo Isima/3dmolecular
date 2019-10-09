@@ -2,13 +2,13 @@ CC=gcc
 CFLAGS=-Wall -g
 LDFLAGS=-lR -lm
 MEMFLAGS=-fsanitize=address -static-libasan
-EXEC=test
+EXEC=molecular3d
 SRC= $(wildcard *.c)
 OBJ= $(SRC:.c=.o)
 
 all: $(EXEC)
 
-test: $(OBJ)
+molecular3d: $(OBJ)
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 %.o: %.c
